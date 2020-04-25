@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff">
+<title>NANYAKA Portfolio</title>
+<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+<style>
+	body
+	{
+		font-family: Consolas, Yu Gothic, Hiragino kaku Gothic, sans-serif;
+        display: flex;
+        flex-flow: column;
+        min-height: 100vh;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        line-height: 1.7;
+	}
+	p.logo {
+		padding: .5em;
+		font-size: 18pt;
+		animation: logoanim 2s both;
+	}
+	@keyframes logoanim {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.05);
+		}
+	}
+
+	nav
+	{
+		float: right;
+	}
+	nav a
+	{
+		text-decoration: none;
+		color: #222;
+	}
+	nav a li.item {
+		display: inline;
+		padding: 1.5em;
+		border-bottom-style: solid;
+	}
+	nav a li.item:hover {
+		animation: navanim 1s both;
+	}
+	ul li 
+	{
+		list-style-type: none;
+	}
+	ul li span
+	{
+		margin: 1em;
+	}
+	ul ol
+	{
+		list-style-type: none;
+	}
+	@keyframes navanim {
+		from {
+			border-color: #ccc;
+			border-width: .2em;	
+		}
+		to {
+			border-color: #000;
+			border-width: .25em;
+		}
+	}
+        section {
+                flex: 1;
+        }
+	section .spacer {
+		height: 5em;
+	}
+	.tech {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+	.tech li {
+		margin: 1em;
+	}
+	img {
+		max-width: 70px;
+		min-width: 70px;
+	}
+	footer {
+		padding: .75em;
+		margin-top: 1em;
+		text-align: center;
+		color: #fff;
+		background: #222;
+	}
+	footer a {
+		color: #fff;
+	}
+	@media screen and (max-width: 580px){
+		*
+		{
+			font-size: 11pt;
+		}
+                body
+                {
+                        width: 100%;
+                }
+		footer
+		{
+			width: 100%;
+		}
+	}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152790439-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152790439-9');
+</script>
+
+</head>
+<body>
+<header>
+	<p class="logo">NANYAKA PORTFOLIO</p>
+	<nav>
+		<a href="index.html"><li class="item">HOME</li></a>
+		<a href="work.html"><li class="item">SITES</li></a>
+		<a href="#"><li class="item">ABOUT</li></a>
+	</nav>
+</header>
+<section>
+	<div class="spacer"></div>
+</section>
+<section>
+	<h3>Introduction</h3>
+	<ul>
+		<li>横須賀でウェブの仕事をしています．</li>
+		<li>ウェブでお困りの方に向けたウェブ相談を行っています：（日給1500円～）</li>
+		<li>お気軽にお問い合わせください．</li>
+		<li>Contact： info at nanyaka.info</li>
+	</ul>
+	<h3>CV</h3>
+	<ul>
+		<li><span>2018</span>ほどがやパソボラ / Pasobora Hodogaya HPWG</li>
+		<li><span>2017</span>2級ウェブデザイン技能士 / 2nd grade Certified Skilled Worker of Web Design</li>
+		<li><span>2016</span>MCP 70-480 / Microsoft Specialist Certification in Visual Studio</li>
+		<li><span>2015</span>MOSマスター / MOS Master</li>
+		<li><span>2014</span>日本応用数理学会 会員 / Japan Society for Industrial and Applied Mathematics</li>
+		<li><span>2013</span>ITエンジニア / IT Engineer</li>
+		<li><span>2012</span>理学修士 / Master of Science</li>
+		<li><span>2011</span>基本情報技術者 /  Fundamental Information Technology Engineer</li>
+		<li><span>2010</span>図書館情報学学士 / Bachelor of Library and Information Science</li>
+	</ul>
+	<h3>Technology</h3>
+	<ul class="tech">
+		<li><img src="img/ch.png" alt="HTML5, CSS3"></li>
+		<li><img src="img/wc.png" alt="WebComponent"></li>
+		<li><img src="img/sa.png" alt="Sass"></li>
+		<li><img src="img/bs.svg" alt="Bootstrap"></li>
+		<li><img src="img/md.svg" alt="Material Design"></li>
+		<li><img src="img/js.png" alt="JavaScript"></li>
+		<li><img src="img/jq.jpg" alt="jQuery"></li>
+		<li><img src="img/ng.svg" alt="Angular"></li>
+		<li><img src="img/ph.svg" alt="PHP"></li>
+		<li><img src="img/fp.png" alt="FuelPHP"></li>
+		<li><img src="img/lr.svg" alt="Laravel"></li>
+		<li><img src="img/wp.png" alt="WordPress"></li>
+		<li><img src="img/ru.png" alt="Ruby"></li>
+		<li><img src="img/ra.svg" alt="Rails"></li>
+		<li><img src="img/my.png" alt="MySQL"></li>
+		<li><img src="img/sq.svg" alt="SQL Server"></li>
+		<li><img src="img/pb.png" alt="Publisher"></li>
+		<li><img src="img/fa.svg" alt="Font Awesome"></li>
+	</ul>
+</section>
+<footer>
+	<a href="https://www.facebook.com/dgbjdjg"><i class="fab fa-facebook-f"></i></a>
+	<a href="https://github.com/IKIX"><i class="fab fa-github"></i></a>
+	<a href="https://teratail.com/users/IKIX"><i class="fas fa-terminal"></i></a>
+	<a href="https://medium.com/@hirazumiuzutaka"><i class="fab fa-medium-m"></i></a>
+	<a href="https://www.slideshare.net/dgbjdjg"><i class="fab fa-slideshare"></i></a>
+	<a href="https://twitter.com/bottoshiki/media"><i class="fab fa-twitter"></i></a>
+	<a href="https://ja.wikipedia.org/wiki/%E5%88%A9%E7%94%A8%E8%80%85:Dgbjdjg"><i class="fab fa-wikipedia-w"></i></a>
+	<p>nanyaka.info 2016-2018</p>
+</footer>
+</body>
+</html>

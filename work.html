@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff">
+<title>NANYAKA Portfolio</title>
+<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+<style>
+	body
+	{
+		font-family: Consolas, Yu Gothic, Hiragino kaku Gothic, sans-serif;
+        display: flex;
+        flex-flow: column;
+        min-height: 100vh;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+	}
+	p.logo {
+		padding: .5em;
+		font-size: 18pt;
+		animation: logoanim 2s both;
+	}
+	@keyframes logoanim {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.05);
+		}
+	}
+
+	nav
+	{
+		float: right;
+	}
+	nav a
+	{
+		text-decoration: none;
+		color: #222;
+	}
+	nav a li.item {
+		display: inline;
+		padding: 1.5em;
+		border-bottom-style: solid;
+	}
+	nav a li.item:hover {
+		animation: navanim 1s both;
+	}
+	@keyframes navanim {
+		from {
+			border-color: #ccc;
+			border-width: .2em;	
+		}
+		to {
+			border-color: #000;
+			border-width: .25em;
+		}
+	}
+	footer {
+		padding: .75em;
+		margin-top: 1em;
+		text-align: center;
+		color: #fff;
+		background: #222;
+                bottom: 0;
+	}
+	footer a {
+		color: #fff;
+	}
+	.spacer {
+		height: 70px;
+	}
+	article {
+		display: flex;
+		margin: 8px auto;
+		border: 1px dotted #ccc;
+	}
+	article a {
+		display: flex;
+		text-decoration: none;
+		color: #666;
+		width: 100%;
+	}
+	article a:hover {
+		opacity: 0.7;
+		background: #eee;
+	}
+	article a figure img {
+		border-radius: .2em;
+		float: left;
+		width: 200px;
+		border: 1px #aaa solid;
+		margin-top: 1em;
+	}
+	article a:hover figure img {
+		transform: scale(0.98);
+		transition: transform .2s;
+	}
+	.title {
+		font-family: Helvetica, BIZ UDGothic, sans-serif;
+		font-size: 125%;
+		font-weight: 900;
+	}
+	.explain {
+		font-size: 90%;
+		font-weight: normal;
+		text-decoration: underline dotted #888;
+	}
+	article a p span {
+		background: wheat;
+		border-radius: 2px;
+		color: #888;
+		padding: 3px;
+		font-size: 70%;
+		font-weight: 400;
+		float: right;
+	}
+	aside {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	aside .flex {
+		width: 25vw;
+		padding: 1em;
+		transition: .5s;
+	}
+	aside .flex a {
+		color: #555;
+		text-decoration: none;
+	}
+	aside .flex:hover {
+		background: #ccc;
+	}
+	@media screen and (max-width: 580px){
+		*
+		{
+			font-size: 11pt;
+		}
+        body
+        {
+            width: 100%;
+        }
+		section .flex
+		{
+			width: 90%;
+		}
+		footer
+		{
+			width: 100%;
+		}
+        article a
+        {
+            flex-direction: column;
+        }
+	}
+	@media screen and (min-width: 581px){
+		article a figure:last-child {
+			width: 100%;
+		}
+	}
+	}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152790439-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152790439-9');
+</script>
+
+</head>
+<body>
+<header>
+	<p class="logo">NANYAKA PORTFOLIO</p>
+	<nav>
+		<a href="index.html"><li class="item">HOME</li></a>
+		<a href="#"><li class="item">SITES</li></a>
+		<a href="cv.html"><li class="item">ABOUT</li></a>
+	</nav>
+</header>
+<section>
+	<div class="spacer"></div>
+</section>
+<section>
+	<article class="flex">
+		<a href="http://nanyaka.info/">
+			<figure>
+				<img src="img/home.png" alt="NANYAKA WebDev Home">
+			</figure>
+			<figure>
+				<p class="title">
+					NANYAKA WebDev Home
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					「十数年、なんやかんやで、ウェブ開発」という意味を込めた屋号。ウェブ屋「NANYAKA WebDev」のホームページです。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/tml/">
+			<figure>
+				<img src="img/tml.png" alt="髙橋数理研究所">
+			</figure>
+			<figure>
+				<p class="title">
+					髙橋数理研究所
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					日曜数学者としての活動を紹介するサイト。多くのテーマについて、長い目で見て少しずつ、成果を公表しています。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="https://wbdv.potaro.org">
+			<figure>
+				<img src="img/wbdv.png" alt="wbdv">
+			</figure>
+			<figure>
+				<p class="title">
+					wbdv [web dev]
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					ウェブ開発に関する小技や独自の実験を記事にした技術ブログ。日本各地から安定したアクセスがあります。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="https://stella.potaro.org">
+			<figure>
+				<img src="img/stella.png" alt="ステラ">
+			</figure>
+			<figure>
+				<p class="title">
+					ステラ
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					小学生の時から好きだった星座や天体を扱ったサイト。全天88星座について記事にすることを目標にしています。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://lang0.potaro.org">
+			<figure>
+				<img src="img/lang0.png" alt="ランゴ">
+			</figure>
+			<figure>
+				<p class="title">
+					lang0 - ランゴ
+					<span>Bootstrap</span>
+				</p>
+				<p class="explain">
+					2020年代のIT業界を席巻するとみられる、新しいプログラミング言語を、ゼロから勉強していく学習記録サイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/wrdwb/">
+			<figure>
+				<img src="img/hsna.png" alt="平成西周">
+			</figure>
+			<figure>
+				<p class="title">
+					平成西周
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					平成が終わるとき、平成は役割を終える。翻訳漢語ではなく、英語の新語を編み出し、例文をしたためる、造語サイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/wp/">
+			<figure>
+				<img src="img/nb.png" alt="Notion Boy">
+			</figure>
+			<figure>
+				<p class="title">
+					Notion Boy
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					自分にしか理解できない文体は可能か。人に読まれないべき文章とは。毎回1000字でつづる私的言語の実験サイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/temp/">
+			<figure>
+				<img src="img/tmp.png" alt="temp">
+			</figure>
+			<figure>
+				<p class="title">
+					temp
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					ウェブを仕事にする過程を記録した日記サイト。高慢な時あり、落魄の日あり、人間らしさあふれる起承転結型の独白文。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/sql/">
+			<figure>
+				<img src="img/sql.png" alt="the SQL">
+			</figure>
+			<figure>
+				<p class="title">
+					the SQL
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					ビッグデータとAIに大切なのは、データベースとアルゴリズム。クエリとグラフを研究する日曜数学者による、データサイエンス入門。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="https://nk.potaro.org/">
+			<figure>
+				<img src="img/nk.png" alt="神経の王国">
+			</figure>
+			<figure>
+				<p class="title">
+					神経の王国
+					<span>Material Design Lite</span>
+				</p>
+				<p class="explain">
+					神経を制す者、人生を制す。神経に多面的にアプローチ。最新科学の仮説が解明する、神経の取説。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://nanyaka.info/progeng/">
+			<figure>
+				<img src="img/prog.png" alt="プログラマのための英文読解術">
+			</figure>
+			<figure>
+				<p class="title">
+					プログラマのための英文読解術
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					分からないことをインターネットで検索して、英語のページを見つけると避けてしまうあなたに贈る、英文読解の裏技。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://sqhck.nanyaka.info/">
+			<figure>
+				<img src="img/seq.png" alt="SeqHack">
+			</figure>
+			<figure>
+				<p class="title">
+					SeqHack
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					自分はどこから来て、どこへ行くのか、考えるには遺伝子を知るべし。配列情報からプログラムで知見を得る生命情報学の紹介。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="https://half.potaro.org">
+			<figure>
+				<img src="img/half.png" alt="半人前翻訳塾">
+			</figure>
+			<figure>
+				<p class="title">
+					半人前翻訳塾
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					自動翻訳の時代。自己流の翻訳と自動翻訳を比較し、自動翻訳に対抗しつつ敬意を示す、短文翻訳サイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://book.potaro.org/publisher/">
+			<figure>
+				<img src="img/dtp.png" alt="DTP on Publisher">
+			</figure>
+			<figure>
+				<p class="title">
+					DTP on Publisher
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					Office365についてくるPublisher。使い方を作成例とともに紹介。Publisherで何でも作れるようになるサイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="https://disp.potaro.org/">
+			<figure>
+				<img src="img/disp.png" alt="Future Display">
+			</figure>
+			<figure>
+				<p class="title">
+					Future Display
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					紙、テレビ、PC、モバイルに次ぐ、第5のメディアとしてのディスプレイ。IoT・VR・AI時代のコンテンツの未来を考えます。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://nishi.nanyaka.info/">
+			<figure>
+				<img src="img/ykns.png" alt="Yoko Nishi">
+			</figure>
+			<figure>
+				<p class="title">
+					YokoNishi
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					横浜市西区・保土ヶ谷区周辺のタウンメディア。街並みの写真や生活に役立つ情報を紹介。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://dts.nanyaka.info/">
+			<figure>
+				<img src="img/dts.png" alt="designTips">
+			</figure>
+			<figure>
+				<p class="title">
+					designTips
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					日本のウェブデザイナーに贈る国内/世界のウェブ最新事情。老若男女、知識をアップデート。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="https://potaro.org/index">
+			<figure>
+				<img src="img/cppp.png" alt="コピペパ！">
+			</figure>
+			<figure>
+				<p class="title">
+					コピペパ！
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					コピペで動く！クラウドにアップロードできる言語で書いたサンプルパーツコレクション。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="https://nichi.potaro.org/">
+			<figure>
+				<img src="img/nchy.png" alt="NICHI MATH">
+			</figure>
+			<figure>
+				<p class="title">
+					NICHI MATH
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					日曜数学の研究者として、成果を世界に発信するための研究室ページ。Willingness but who cares?
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="https://tecne.potaro.org/">
+			<figure>
+				<img src="img/tecne.png" alt="Tecneics">
+			</figure>
+			<figure>
+				<p class="title">
+					Tecneics
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					科学の回文としての技術。55のエンジニアリングアイデアを実現する理論から実践までの過程。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="https://jg.potaro.org/">
+			<figure>
+				<img src="img/jGs.png" alt="jGadgets">
+			</figure>
+			<figure>
+				<p class="title">
+					jGadgets
+					<span>Bootstrap</span>
+				</p>
+				<p class="explain">
+					jQueryで書いたガラクタ・グラフィックス集。HTML/CSS/JavaScript、もちろんデモもみられます。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="https://bbsb.potaro.org/">
+			<figure>
+				<img src="img/bbsb.png" alt="貧乏新聞">
+			</figure>
+			<figure>
+				<p class="title">
+					貧乏新聞
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					貧乏時代に創刊した幸福に暮らす知恵を紹介するメディア。高等遊民から脱したため、只今休刊中。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://nchy.nanyaka.info/cook/">
+			<figure>
+				<img src="img/cook.png" alt="ある日曜数学者のレシピ">
+			</figure>
+			<figure>
+				<p class="title">
+					ある日曜数学者のレシピ
+					<span>Material Design Lite</span>
+				</p>
+				<p class="explain">
+					生命科学の修士号を持つ日曜数学者が、健康に食生活を送る秘密を公開。料理の雑学、食事の記録も。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://nanyaka.info/kkh/">
+			<figure>
+				<img src="img/kkh.png" alt="覚杯">
+			</figure>
+			<figure>
+				<p class="title">
+					覚杯
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					自戒を込めてイエスの杯を覚えるクリスチャンが、聖書のみことばを感謝する日記形式の記録帳。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://dgbjdjg.sakura.ne.jp/paso/">
+			<figure>
+				<img src="img/paso.png" alt="ボランティア街道">
+			</figure>
+			<figure>
+				<p class="title">
+					ボランティア街道
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					横浜市保土ヶ谷区でボランティア活動中の団体のメンバーに向けたホームページ。
+				</p>
+			</figure>
+		</a>
+	</article>
+        <article class="flex">
+		<a href="http://potaro.org/ldws/">
+			<figure>
+				<img src="img/ldws.png" alt="LDWS">
+			</figure>
+			<figure>
+				<p class="title">
+					LDWS
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					ローカルマシンのサーバーで動かせる、自作ウェブシステムのダウンロードページ。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://potaro.org/csw1/">
+			<figure>
+				<img src="img/csw.png" alt="1級ウェブデザイン技能士 合格対策">
+			</figure>
+			<figure>
+				<p class="title">
+					1級ウェブデザイン技能士 合格対策
+					<span>WordPress</span>
+				</p>
+				<p class="explain">
+					2020年春に100人目の1級ウェブデザイン技能士になることを目標とする、数少ない合格対策サイト。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<article class="flex">
+		<a href="http://ushi.potaro.org/">
+			<figure>
+				<img src="img/ush.png" alt="丑読（うしどく）">
+			</figure>
+			<figure>
+				<p class="title">
+					丑読（うしどく）
+					<span>独自</span>
+				</p>
+				<p class="explain">
+					インプットの量でも、アウトプットの質でもない。反芻して考える。読書への愛好を綴る書評記録帳。
+				</p>
+			</figure>
+		</a>
+	</article>
+	<p>Others</p>
+	<aside>
+		<div class="flex"><a href="http://stack.nanyaka.info/">stackoverwork</a></div>
+		<div class="flex"><a href="http://nanyaka.info/fuel/">スッキリするFuelPHP</a></div>
+		<div class="flex"><a href="http://nanyaka.info/gnw/">GeoNow</a></div>
+		<div class="flex"><a href="https://ist.potaro.org/">情報空間論</a></div>
+		<div class="flex"><a href="http://think.tank.jp">www.critique</a></div>
+                <div class="flex"><a href="http://drill.potaro.org">デザインドリル</a></div>
+                <div class="flex"><a href="http://potaro.org/zs/">図通 整理通</a></div>
+        	<div class="flex"><a href="http://graph.2-d.jp/">タカハシグラフ</a></div>
+	</aside>
+</section>
+<footer>
+	<a href="https://www.facebook.com/dgbjdjg"><i class="fab fa-facebook-f"></i></a>
+	<a href="https://github.com/IKIX"><i class="fab fa-github"></i></a>
+	<a href="https://teratail.com/users/IKIX"><i class="fas fa-terminal"></i></a>
+	<a href="https://medium.com/@hirazumiuzutaka"><i class="fab fa-medium-m"></i></a>
+	<a href="https://www.slideshare.net/dgbjdjg"><i class="fab fa-slideshare"></i></a>
+	<a href="https://twitter.com/bottoshiki/media"><i class="fab fa-twitter"></i></a>
+	<a href="https://ja.wikipedia.org/wiki/%E5%88%A9%E7%94%A8%E8%80%85:Dgbjdjg"><i class="fab fa-wikipedia-w"></i></a>
+	<p>nanyaka.info 2016-2018</p>
+</footer>
+</body>
+</html>

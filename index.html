@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POTARO WebDev</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <link rel="stylesheet" href="jquery.pagepiling.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="jquery.pagepiling.min.js"></script>
+    <script>
+        $(function() {
+            setTimeout(function() {
+                $('body').removeClass('loading');
+            }, 10);
+        });
+
+        $(document).ready(function() {
+            $('#pagepiling').pagepiling({
+                menu: '#menu',
+                direction: 'horizontal',
+                anchors: ['1', '2', '3', '4'],
+                navigation: {
+                    'position': 'bottom',
+                },
+                scrollingSpeed: 500,
+                sectionsColor: ['#f2f2f2', '#4BAAC3', '#7BAABE', 'whitesmoke'],
+                sectionSelector: '.contents'
+            });
+        });
+
+        (function($) {
+
+            $(function() {
+
+                setTimeout(function() {
+                    //interval
+                    $('.jumbotron').show();
+                }, 30);
+
+                var Command = function(typing) {
+                    this.strings = $(typing).text();
+                    this.textlen = this.strings.length;
+                    this.typtext = "";
+                    this.count = 0;
+                    this.timerID = null;
+                }
+
+                var com1 = new Command("#typingp1");
+                var com2 = new Command("#typingp2");
+                var com3 = new Command("#typingp3");
+                var com4 = new Command("#typingp4");
+
+                //一旦消す
+                $('#typingp1').text("");
+                $('#typingp2').text("");
+                $('#typingp3').text("");
+                $('#typingp4').text("");
+
+                //blink-SET
+                var blinkID = setInterval(blink_text, 10000);
+
+
+                if (com1.textlen) {
+                    setTimeout(function() {
+                        com1.timerID = setInterval(show_text, 50);
+                    }, 3000);
+                }
+
+                if (com2.textlen) {
+                    setTimeout(function() {
+                        $('#prompt2').show();
+                    }, 4000);
+                    setTimeout(function() {
+                        com2.timerID = setInterval(show_text2, 50);
+                    }, 6000);
+                }
+
+                if (com3.textlen) {
+                    setTimeout(function() {
+                        $('#prompt3').show();
+                    }, 7000);
+                    setTimeout(function() {
+                        com3.timerID = setInterval(show_text3, 50);
+                    }, 9000);
+                }
+
+                if (com4.textlen) {
+                    setTimeout(function() {
+                        $('#answer3').show();
+                        $('#prompt4').show();
+                    }, 10000);
+                    setTimeout(function() {
+                        com4.timerID = setInterval(show_text4, 50);
+                    }, 12000);
+                    setTimeout(function() {
+                        $('#answer4').show();
+                    }, 15000);
+                }
+
+                //show
+                function show_text() {
+                    if (com1.count < com1.textlen) {
+                        var text = com1.strings.charAt(com1.count);
+                        com1.typtext += text;
+                        $('#typingp1').text(com1.typtext);
+                        com1.count++;
+                    } else {
+                        clearInterval(com1.timerID);
+                    }
+                }
+
+                function show_text2() {
+                    if (com2.count < com2.textlen) {
+                        var text2 = com2.strings.charAt(com2.count);
+                        com2.typtext += text2;
+                        $('#typingp2').text(com2.typtext);
+                        com2.count++;
+                    } else {
+                        clearInterval(com2.timerID);
+                    }
+                }
+
+                function show_text3() {
+                    if (com3.count < com3.textlen) {
+                        var text3 = com3.strings.charAt(com3.count);
+                        com3.typtext += text3;
+                        $('#typingp3').text(com3.typtext);
+                        com3.count++;
+                    } else {
+                        clearInterval(com3.timerID);
+                    }
+                }
+
+                function show_text4() {
+                    if (com4.count < com4.textlen) {
+                        var text4 = com4.strings.charAt(com4.count);
+                        com4.typtext += text4;
+                        $('#typingp4').text(com4.typtext);
+                        com4.count++;
+                    } else {
+                        clearInterval(com4.timerID);
+                    }
+                }
+
+                //blink
+                function blink_text() {
+                    $('#blink4').css({
+                        'opacity': '1'
+                    });
+                    setTimeout(function() {
+                        $('#blink4').css({
+                            'opacity': '0'
+                        });
+                    }, 9500);
+                }
+
+            });
+
+        })(jQuery);
+
+    </script>
+    <style>
+        body {
+            font-size: 14px;
+        }
+
+        .loading {
+            display: none;
+        }
+
+        h1,
+        h2 {
+            font-size: 42px;
+            margin-left: 1em;
+            max-width: 11em;
+            border-right: 4px solid #222;
+        }
+
+        #menu {
+            position: fixed;
+            z-index: 10;
+            transform: rotate(270deg);
+            margin-left: 1em;
+        }
+
+        #menu li {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column-reverse;
+            padding: .5em;
+            margin: .5em;
+            font-size: 1.25em;
+        }
+
+        #menu li a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        #menu .spacer {
+            width: 8em;
+        }
+
+        #hamburger {
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            z-index: 100;
+        }
+
+        #hamburger .items {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hamburger a {
+            color: #222;
+            font-size: 2em;
+            padding: .5em;
+        }
+
+        .jumbotron {
+            height: 15em;
+            background: #eee;
+            color: #222;
+            display: none;
+            font-family: Consolas, monospace;
+        }
+
+        .jumbotron p {
+            padding: 0;
+        }
+
+        #typingp1,
+        #typingp2,
+        #typingp3,
+        #typingp4 {
+            display: inline;
+        }
+
+        #prompt2,
+        #prompt3,
+        #prompt4 {
+            display: none;
+        }
+
+        #input1,
+        #input2,
+        #input3,
+        #input4 {
+            display: flex;
+        }
+
+        #answer3,
+        #answer4 {
+            display: none;
+        }
+
+        @keyframes blink {
+            75% {
+                opacity: 0.0;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            75% {
+                opacity: 0.0;
+            }
+        }
+
+        #blink4 {
+            display: inline-block;
+            font-weight: bold;
+            text-align: center;
+            animation: blink 1s step-end infinite;
+        }
+
+        #tech {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: left;
+            justify-content: left;
+            max-width: 70%;
+        }
+
+        #tech li {
+            margin: 2px;
+            background: #fff;
+            padding: .75em;
+            list-style-type: none;
+            width: 3.2em;
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tech img {
+            max-width: 3.2em;
+            min-width: 2em;
+        }
+
+        #tech img[alt="Sass"],
+        #tech img[alt="jQuery"],
+        #tech img[alt="Laravel"],
+        #tech img[alt="PHP"],
+        #tech img[alt="Rails"],
+        #tech img[alt="WordPress"] {
+            transform: scale(1.24);
+        }
+
+        #tech img[alt="FuelPHP"] {
+            transform: scale(0.7);
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 9px;
+            }
+
+            h1,
+            h2 {
+                font-size: 21px;
+            }
+        }
+
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152790439-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152790439-9');
+</script>
+
+</head>
+
+<body class="loading">
+    <ul id="menu">
+        <li data-menuanchor="1" class="active"><a href="#1">HOME</a></li>
+        <li data-menuanchor="2"><a href="#2">TECHNOLOGY</a></li>
+        <li data-menuanchor="3"><a href="#3">PRICE</a></li>
+        <li data-menuanchor="4"><a href="#4">CONTACT</a></li>
+        <li data-menuanchor="5"><a class="spacer"></a></li>
+    </ul>
+
+    <aside id="hamburger">
+        <ul class="items">
+            <a href="https://www.facebook.com/dgbjdjg"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/IKIX"><i class="fab fa-github"></i></a>
+            <a href="https://teratail.com/users/IKIX"><i class="fas fa-terminal"></i></a>
+            <a href="https://medium.com/@hirazumiuzutaka"><i class="fab fa-medium-m"></i></a>
+            <a href="https://www.slideshare.net/dgbjdjg"><i class="fab fa-slideshare"></i></a>
+            <a href="https://twitter.com/bottoshiki/media"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCeeDVreBtnwN0KWnR8jh8sw"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/toshiki-takahashi-868771746"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://ja.wikipedia.org/wiki/%E5%88%A9%E7%94%A8%E8%80%85:Dgbjdjg"><i class="fab fa-wikipedia-w"></i></a>
+        </ul>
+    </aside>
+
+    <div id="pagepiling">
+        <div class="contents" id="section1">
+            <h1>POTARO WebDev</h1>
+            <div class="jumbotron">
+                <section>
+                    <p id="input1"><span id="prompt1">POTARO$></span><span id="typingp1">mkdir home</span></p>
+                    <p id="input2"><span id="prompt2">POTARO$></span><span id="typingp2">cd home</span></p>
+                    <p id="input3"><span id="prompt3">POTARO$></span><span id="typingp3">pwd</span></p>
+                    <p id="answer3">/Yokohama/home</p>
+                    <p id="input4"><span id="prompt4">POTARO$></span><span id="typingp4">make -k</span></p>
+                    <p id="answer4">Hello Web!<span id="blink4">|</span></p>
+                </section>
+            </div>
+        </div>
+        <div class="contents" id="section2">
+            <h1>TECHNOLOGY</h1>
+            <ul id="tech">
+                <li><img src="img/ch.png" alt="HTML5, CSS"></li>
+                <li><img src="img/wc.png" alt="WebComponent"></li>
+                <li><img src="img/sa.png" alt="Sass"></li>
+                <li><img src="img/bs.svg" alt="Bootstrap"></li>
+                <li><img src="img/md.svg" alt="Material Design"></li>
+                <li><img src="img/js.png" alt="JavaScript"></li>
+                <li><img src="img/jq.jpg" alt="jQuery"></li>
+                <li><img src="img/ng.svg" alt="Angular"></li>
+                <li><img src="img/ph.svg" alt="PHP"></li>
+                <li><img src="img/fp.png" alt="FuelPHP"></li>
+                <li><img src="img/lr.svg" alt="Laravel"></li>
+                <li><img src="img/wp.png" alt="WordPress"></li>
+                <li><img src="img/ru.png" alt="Ruby"></li>
+                <li><img src="img/ra.svg" alt="Rails"></li>
+                <li><img src="img/py.png" alt="Python"></li>
+                <li><img src="img/pr.png" alt="Processing"></li>
+                <li><img src="img/my.png" alt="MySQL"></li>
+                <li><img src="img/sq.svg" alt="SQL Server"></li>
+                <li><img src="img/pb.png" alt="Publisher"></li>
+                <li><img src="img/fa.svg" alt="Font Awesome"></li>
+            </ul>
+        </div>
+        <div class="contents" id="section3">
+            <h1>PRICE</h1>
+            <h2>work at potaro.org</h2>
+        </div>
+        <div class="contents" id="section4">
+            <h1>CONTACT</h1>
+            <h2>work at potaro.org</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>
